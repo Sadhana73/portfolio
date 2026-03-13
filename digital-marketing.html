@@ -604,6 +604,25 @@ img { display: block; max-width: 100%; }
   background: var(--slate);
 }
 
+/* Two embeds side by side */
+.cs-item__embeds-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  background: var(--slate);
+}
+
+.cs-item__embed-col {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--slate);
+}
+
+.cs-item__embed-col + .cs-item__embed-col {
+  border-left: 1px solid rgba(255,255,255,0.08);
+}
 
 /* ══════════ CASE STUDIES LIST ══════════ */
 .cs-list {
@@ -708,6 +727,97 @@ img { display: block; max-width: 100%; }
 .cs-block--highlight h4 { color: var(--sage-lt); }
 .cs-block--highlight p  { color: rgba(247,244,239,0.75); }
 
+/* STP card — full width embeds panel */
+.cs-item--stp {
+  grid-template-columns: 1fr 1.8fr;
+}
+
+/* ══════════ PRESENTATION CARDS ══════════ */
+.pres-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.pres-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  transition: box-shadow var(--t), transform var(--t), border-color var(--t);
+}
+.pres-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(61,122,95,0.2);
+}
+
+.pres-card__embed {
+  width: 100%;
+  overflow: hidden;
+  background: var(--slate);
+  border-bottom: 1px solid var(--border);
+}
+
+.pres-card__body {
+  padding: 1.5rem 1.75rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.pres-card__meta {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.pres-card__num {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--slate-lt);
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.pres-card__title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--slate);
+  line-height: 1.2;
+}
+
+.pres-card__desc {
+  font-size: 0.83rem;
+  font-weight: 300;
+  color: var(--slate-lt);
+  line-height: 1.65;
+}
+
+.pres-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.75rem;
+  margin-top: 0.25rem;
+  border-top: 1px solid var(--border);
+}
+
+.pres-card__attr {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--slate-mid);
+  transition: color var(--t);
+}
+.pres-card__attr:hover { color: var(--sage); }
+
+.pres-card__author {
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: var(--slate-lt);
+}
 
 /* ══════════ SEO INSIGHTS ══════════ */
 .insights-grid {
@@ -951,8 +1061,10 @@ img { display: block; max-width: 100%; }
   .seo-card__left { border-right: none; border-bottom: 1px solid var(--border); }
   .seo-card__details { grid-template-columns: 1fr 1fr; }
   .cs-item { grid-template-columns: 1fr; }
+  .cs-item--stp { grid-template-columns: 1fr; }
   .cs-item__left { border-right: none; border-bottom: 1px solid var(--border); padding-bottom: 1.5rem; }
   .cs-item__right { grid-template-columns: 1fr 1fr; }
+  .pres-grid { grid-template-columns: 1fr; }
   .insights-grid { grid-template-columns: repeat(2, 1fr); }
   .tools-grid { grid-template-columns: 1fr; }
   .takeaways-grid { grid-template-columns: 1fr; }
@@ -1293,7 +1405,7 @@ img { display: block; max-width: 100%; }
           </div>
           <h3 class="cs-mini-card__title" id="cs-doc1-title">Decision Making</h3>
           <p class="cs-mini-card__desc">A breakdown of how decisions are framed, evaluated, and made — applied to real marketing and product scenarios.</p>
-          <a href="#" class="card-link cs-mini-card__link">Read Document ↗</a>
+          <a href="https://workdrive.zoho.in/folder/txr0k8a9fa950b92246cd96bd167e32a75817" target="_blank" rel="noopener noreferrer" class="card-link cs-mini-card__link">Read Document ↗</a>
         </article>
 
         <article class="cs-mini-card" aria-labelledby="cs-doc2-title">
@@ -1303,7 +1415,7 @@ img { display: block; max-width: 100%; }
           </div>
           <h3 class="cs-mini-card__title" id="cs-doc2-title">Aptitude</h3>
           <p class="cs-mini-card__desc">Notes and reflections on analytical thinking, pattern recognition, and problem-solving approaches explored during ZSL.</p>
-          <a href="#" class="card-link cs-mini-card__link">Read Document ↗</a>
+          <a href="https://workdrive.zoho.in/folder/txr0k8a9fa950b92246cd96bd167e32a75817" target="_blank" rel="noopener noreferrer" class="card-link cs-mini-card__link">Read Document ↗</a>
         </article>
 
         <article class="cs-mini-card" aria-labelledby="cs-doc3-title">
@@ -1313,7 +1425,7 @@ img { display: block; max-width: 100%; }
           </div>
           <h3 class="cs-mini-card__title" id="cs-doc3-title">Website Brief</h3>
           <p class="cs-mini-card__desc">A written brief documenting the goals, audience, and design rationale behind one of the live websites built during the programme.</p>
-          <a href="#" class="card-link cs-mini-card__link">Read Document ↗</a>
+          <a href="https://workdrive.zoho.in/folder/txr0k8a9fa950b92246cd96bd167e32a75817" target="_blank" rel="noopener noreferrer" class="card-link cs-mini-card__link">Read Document ↗</a>
         </article>
 
       </div>
@@ -1328,7 +1440,7 @@ img { display: block; max-width: 100%; }
           </div>
           <h3 class="cs-mini-card__title" id="cs1-title">EU Campaign Analytics</h3>
           <p class="cs-mini-card__desc">Analyzed marketing campaign performance across EU countries — impressions, CTR, CPC, conversion rate, churn, and revenue per signup.</p>
-          <a href="#" class="card-link cs-mini-card__link">Read Case Study ↗</a>
+          <a href="https://workdrive.zoho.in/folder/txr0k8a9fa950b92246cd96bd167e32a75817" target="_blank" rel="noopener noreferrer" class="card-link cs-mini-card__link">Read Case Study ↗</a>
         </article>
 
         <article class="cs-mini-card" aria-labelledby="cs2-title">
@@ -1338,7 +1450,7 @@ img { display: block; max-width: 100%; }
           </div>
           <h3 class="cs-mini-card__title" id="cs2-title">Textile SEO Analysis</h3>
           <p class="cs-mini-card__desc">Used the textile website as a live lab to observe how local search ranking behaves — from first crawl to sustained impressions.</p>
-          <a href="#" class="card-link cs-mini-card__link">Read Case Study ↗</a>
+          <a href="https://workdrive.zoho.in/folder/txr0k8a9fa950b92246cd96bd167e32a75817" target="_blank" rel="noopener noreferrer" class="card-link cs-mini-card__link">Read Case Study ↗</a>
         </article>
 
         <article class="cs-mini-card" aria-labelledby="cs3-title">
@@ -1348,27 +1460,18 @@ img { display: block; max-width: 100%; }
           </div>
           <h3 class="cs-mini-card__title" id="cs3-title">Zoho Healthcare Marketing</h3>
           <p class="cs-mini-card__desc">Examined how a B2B SaaS healthcare product positions itself in regulated industries — trust signals, compliance messaging, and nurture strategy.</p>
-          <a href="#" class="card-link cs-mini-card__link">Read Case Study ↗</a>
+          <a href="https://workdrive.zoho.in/folder/txr0k8a9fa950b92246cd96bd167e32a75817" target="_blank" rel="noopener noreferrer" class="card-link cs-mini-card__link">Read Case Study ↗</a>
         </article>
 
       </div>
 
-      <!-- STP embed card -->
-      <div class="cs-list" role="list">
-        <article class="cs-item cs-item--embed" role="listitem" aria-labelledby="cs4-title">
-          <div class="cs-item__left">
-            <div class="cs-item__meta">
-              <span class="cs-item__num">04</span>
-              <span class="tag tag--sage">Strategy</span>
-            </div>
-            <h3 class="cs-item__title" id="cs4-title">STP Framework Presentation</h3>
-            <p class="cs-item__intro">Applied the Segmentation, Targeting, and Positioning framework to a real product — presenting how STP shapes every downstream marketing decision.</p>
-            <a href="https://www.canva.com/design/DAGwPq_qNlc/ctC2bHyafgZp79E9HKOIrg/view?utm_content=DAGwPq_qNlc&utm_campaign=designshare&utm_medium=embeds&utm_source=link" target="_blank" rel="noopener" class="card-link" style="margin-top:auto;">
-              View Slides ↗
-            </a>
-          </div>
-          <div class="cs-item__embed">
-            <div style="position:relative;width:100%;height:0;padding-top:56.25%;overflow:hidden;border-radius:6px;">
+      <!-- Presentations grid — two large embed cards -->
+      <div class="pres-grid">
+
+        <!-- Card 1: Megakalai M -->
+        <article class="pres-card">
+          <div class="pres-card__embed">
+            <div style="position:relative;width:100%;height:0;padding-top:56.25%;overflow:hidden;">
               <iframe
                 loading="lazy"
                 style="position:absolute;width:100%;height:100%;top:0;left:0;border:none;padding:0;margin:0;"
@@ -1378,17 +1481,58 @@ img { display: block; max-width: 100%; }
                 title="STP Framework Presentation by Megakalai M">
               </iframe>
             </div>
-            <p style="font-size:0.75rem;color:var(--slate-lt);margin-top:0.6rem;font-weight:300;">
-              Black and White Chalkboard Brainstorm Presentation · <span style="font-weight:500;color:var(--slate);">Megakalai M</span>
-            </p>
+          </div>
+          <div class="pres-card__body">
+            <div class="pres-card__meta">
+              <span class="pres-card__num">01</span>
+              <h3 class="pres-card__title">STP Framework</h3>
+            </div>
+            <p class="pres-card__desc">Applied the Segmentation, Targeting, and Positioning framework to a real product — presenting how STP shapes every downstream marketing decision.</p>
+            <div class="pres-card__footer">
+              <a href="https://www.canva.com/design/DAGwPq_qNlc/ctC2bHyafgZp79E9HKOIrg/view?utm_content=DAGwPq_qNlc&utm_campaign=designshare&utm_medium=embeds&utm_source=link" target="_blank" rel="noopener" class="pres-card__attr">
+                STP Framework Presentation ↗
+              </a>
+              <span class="pres-card__author">by Megakalai M</span>
+            </div>
           </div>
         </article>
+
+        <!-- Card 2: Sadhana -->
+        <article class="pres-card">
+          <div class="pres-card__embed">
+            <div style="position:relative;width:100%;height:0;padding-top:56.25%;overflow:hidden;">
+              <iframe
+                loading="lazy"
+                style="position:absolute;width:100%;height:100%;top:0;left:0;border:none;padding:0;margin:0;"
+                src="https://www.canva.com/design/DAHDzf4NAIA/ZKowXlACtLTZVL_gR663lQ/view?embed"
+                allowfullscreen="allowfullscreen"
+                allow="fullscreen"
+                title="STP Framework Presentation by Sadhana">
+              </iframe>
+            </div>
+          </div>
+          <div class="pres-card__body">
+            <div class="pres-card__meta">
+              <span class="pres-card__num">02</span>
+              <h3 class="pres-card__title">Segmentation, Targeting &amp; Positioning</h3>
+            </div>
+            <p class="pres-card__desc">How brands identify their audience and position their products — a visual breakdown of the STP model applied to a real-world scenario.</p>
+            <div class="pres-card__footer">
+              <a href="https://www.canva.com/design/DAHDzf4NAIA/ZKowXlACtLTZVL_gR663lQ/view?utm_content=DAHDzf4NAIA&utm_campaign=designshare&utm_medium=embeds&utm_source=link" target="_blank" rel="noopener" class="pres-card__attr">
+                Design ↗
+              </a>
+              <span class="pres-card__author">by Sadhana</span>
+            </div>
+          </div>
+        </article>
+
       </div>
 
     </div>
   </section>
 
-  <!-- ░░ SEO INSIGHTS ░░ -->\  <section class="section" id="seo-insights" aria-labelledby="insights-heading">
+  <!-- ░░ SEO INSIGHTS ░░ -->
+  <section class="section" id="seo-insights" aria-labelledby="insights-heading">
     <div class="container">
 
       <div class="section__header">
