@@ -526,12 +526,8 @@
       letter-spacing: 0.08em;
       color: var(--teal);
     }
-    .site-card__link svg {
-      transition: transform var(--t);
-    }
-    .site-card__link:hover svg {
-      transform: translate(2px, -2px);
-    }
+    .site-card__link svg { transition: transform var(--t); }
+    .site-card__link:hover svg { transform: translate(2px, -2px); }
 
     /* ══════════ TALKS ══════════ */
     .talks { background: var(--sand); }
@@ -556,16 +552,6 @@
       justify-content: center;
     }
     .talk-card__embed iframe { width: 100%; height: 100%; border: none; }
-    .talk-card__placeholder {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.6rem;
-      color: var(--slate-lt);
-      text-align: center;
-      padding: 1rem;
-    }
-    .talk-card__placeholder p { font-size: 0.8rem; }
     .talk-card__info {
       padding: 1.5rem;
       border-top: 1px solid rgba(15,25,35,0.07);
@@ -625,10 +611,7 @@
       margin-bottom: 0.2rem;
       transition: background var(--t), color var(--t);
     }
-    .product-card:hover .product-card__icon {
-      background: var(--sage);
-      color: #fff;
-    }
+    .product-card:hover .product-card__icon { background: var(--sage); color: #fff; }
 
     .product-card__name {
       font-family: var(--font-display);
@@ -1288,7 +1271,6 @@
 
       </div>
 
-
     </div>
   </section>
 
@@ -1302,14 +1284,14 @@
           <p class="contact__sub">Open to conversations about marketing, product, data, or interesting ideas.</p>
         </div>
         <div class="contact__right">
-          <a href="/cdn-cgi/l/email-protection#afd6c0daddefcac2cec6c381ccc0c2" class="contact-link">
+          <a href="mailto:sadanamk73@gmail.com" class="contact-link">
             <span class="contact-link__label">Email</span>
-            <span class="contact-link__value"><span class="__cf_email__" data-cfemail="f980968c8bb99c94989095d79a9694">[email&#160;protected]</span></span>
+            <span class="contact-link__value">sadanamk73@gmail.com</span>
             <span class="contact-link__arrow">↗</span>
           </a>
-          <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" class="contact-link">
+          <a href="https://www.linkedin.com/in/sadhanapriyam08/" target="_blank" rel="noopener noreferrer" class="contact-link">
             <span class="contact-link__label">LinkedIn</span>
-            <span class="contact-link__value">linkedin.com/in/yourprofile</span>
+            <span class="contact-link__value">linkedin.com/in/sadhanapriyam08</span>
             <span class="contact-link__arrow">↗</span>
           </a>
           <a href="resume.pdf" download class="contact-link">
@@ -1330,7 +1312,7 @@
     </div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script>
     'use strict';
 
     document.getElementById('year').textContent = new Date().getFullYear();
@@ -1416,21 +1398,12 @@
       marquee.addEventListener('mouseleave', () => marquee.style.animationPlayState = 'running');
     }
 
-    document.querySelectorAll('.talk-card__embed[data-embed-url]').forEach(el => {
-      const url = el.getAttribute('data-embed-url');
-      if (!url) return;
-      const iframe = document.createElement('iframe');
-      iframe.src = url; iframe.title = 'Presentation';
-      iframe.allow = 'fullscreen'; iframe.loading = 'lazy';
-      el.innerHTML = ''; el.appendChild(iframe);
-    });
-
     const skip = document.createElement('a');
     skip.href = '#about'; skip.textContent = 'Skip to content';
     Object.assign(skip.style, {
       position:'fixed', top:'-100%', left:'1rem', zIndex:'9999',
       background:'#3D7A5F', color:'#fff', padding:'0.45rem 1rem',
-         borderRadius:'4px', fontSize:'0.8rem', fontWeight:'600', transition:'top 0.2s'
+      borderRadius:'4px', fontSize:'0.8rem', fontWeight:'600', transition:'top 0.2s'
     });
     skip.addEventListener('focus', () => skip.style.top = '1rem');
     skip.addEventListener('blur',  () => skip.style.top = '-100%');
